@@ -26,7 +26,7 @@ title: Master Page
 		{{/block}}
 	</head>
 	<body class="body{{#if visibleGrid}} visible-grid{{/if}}{{#if visibleBreakpoints}} visible-breakpoints{{/if}}">
-		{{>header}}
+		{{!-- {{>header}} --}}
 		<div id="page" class="page{{#if pageClass}} {{pageClass}}{{/if}}">
 			{{#block "master-body"}}
 				{{body}}

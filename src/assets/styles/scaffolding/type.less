@@ -31,23 +31,38 @@ h6 {
 
 h1,
 .giga {
-	font-size: 60px;
-	line-height: @vr*8;
-	margin-bottom: @vr*2;
+	font-size: 30px;
+	line-height: @vr*5;
+
+	@media @BPC {
+		font-size: 60px;
+		line-height: @vr*8;
+		margin-bottom: @vr*2;
+	}
 }
 
 h2,
 .mega {
-	font-size: 40px;
-	line-height: @vr*5;
-	margin-bottom: @vr*2;
+	font-size: 20px;
+	line-height: @vr*4;
+
+	@media @BPC {
+		font-size: 40px;
+		line-height: @vr*5;
+		margin-bottom: @vr*2;
+	}
 }
 
 h3,
 .alpha {
-	font-size: 20px;
-	line-height: @vr*4;
-	margin-bottom: @vr;
+	font-size: 18px;
+	line-height: @vr*3;
+
+	@media @BPC {
+		font-size: 32px;
+		line-height: @vr*6;
+		margin-bottom: @vr;
+	}
 }
 
 h4,

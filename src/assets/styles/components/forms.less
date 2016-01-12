@@ -37,11 +37,11 @@
 // Forms specific variables
 @input-border-width: 1px;
 
-@input-height-smallscreen: @vr*5;
+@input-height-smallscreen: @vr*4;
 @input-padding-y-smallscreen: @vr;
 @input-padding-x-smallscreen: 10px;
 
-@input-height: @vr*7;
+@input-height: @vr*6;
 @input-padding-y: @vr;
 @input-padding-x: 15px;
 
@@ -107,6 +107,75 @@ input[type='search'],
 input[type='password'],
 textarea {
 	appearance: none;
+}
+
+// Inputs, Textareas, Selects
+input,
+textarea,
+select,
+.select-replace {
+	padding: 0 @input-padding-x-smallscreen;
+	width: 100%;
+	max-width: 100%;
+	margin-bottom: @vr;
+	font-size: 16px;
+	font-weight: @font-weight-light;
+	color: @color-text;
+	background: linear-gradient(to bottom, #fafafa 0%, #ffffff 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafafa', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+	border: @input-border-width solid #e8e8e8;
+	border-radius: 1px;
+	vertical-align: middle;
+	display: inline-block;
+	transition: all 100ms;
+	white-space: nowrap;
+	height: @input-height-smallscreen + @vr*2;
+	outline: none;
+
+	@media (min-width: @break-point-d) {
+		padding: 0 @input-padding-x;
+		height: @input-height + @vr*2;
+	}
+
+	@media (min-width: @break-point-f) {
+		font-size: 18px;
+	}
+
+	&:hover,
+	&:focus {
+		border: 1px solid @brand-color-h;
+		outline: none;
+	}
+
+	&[disabled] {
+		background: #f0f0f0;
+		border-color: #ddd;
+		color: #ccc;
+		cursor: not-allowed;
+
+		&:hover,
+		&:focus {
+			border-color: #ccc;
+		}
+
+		.placeholder(#ccc);
+	}
+
+	&[readonly] {
+		cursor: not-allowed;
+
+		&:hover,
+		&:focus {
+			border-color: #ccc;
+		}
+	}
+
+	.lt-ie9 & {
+		height: auto;
+		max-width: none!important;
+		padding-top: @input-padding-y;
+		padding-bottom: @input-padding-y;
+	}
 }
 
 // Inputs within a label
@@ -405,3 +474,35 @@ input[type='file'] {
 		margin-bottom: @vr;
 	}
 }
+
+.adjacent-controls {
+}
+
+.adjacent-controls-single-input {
+
+	input {
+		float: left;
+		width: 100%;
+		border-radius: 5px 5px 0px 0px;
+		margin-bottom: 0;
+		text-align: center;
+
+		@media @BPC {
+			text-align: left;
+			width: 60%;
+			border-radius: 5px 0px 0px 5px;
+		}
+	}
+
+	.btn {
+		float: left;
+		width: 100%;
+		border-radius: 0px 0px 5px 5px;
+
+		@media @BPC {
+			width: 40%;
+			border-radius: 0px 5px 5px 0px;
+		}
+	}
+}
+
